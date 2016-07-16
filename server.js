@@ -8,7 +8,7 @@ var http  = require("http"),
 http.createServer( function( request, response) {
 
     var uri = url.parse( request.url ).pathname;
-    var filename = path.join( process.cwd()+"/www", uri );
+    var filename = path.join( process.cwd()+"/www/freeboard", uri );
 
     console.log( "New Request: \n" +
                  "    URI : " + uri + "\n" +
