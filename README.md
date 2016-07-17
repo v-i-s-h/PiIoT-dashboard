@@ -6,6 +6,8 @@ Contents:
 
 This repository conatins code from the following projects:
 * [Freeboard](https://github.com/Freeboard/freeboard "Freeboard github repo")
+* [freeboard-mqtt](https://github.com/alsm/freeboard-mqtt "Freeboard MQTT plugin")
+* [Paho JS MQTT Client](http://www.eclipse.org/paho/clients/js/ "MQTT JS client from Eclipse Paho project")
 
 To know more about project: [Internet of Your Things](https://www.element14.com/community/community/design-challenges/pi-iot/blog/2016/07/10/piiot-internet-of-your-things-index "Project Documentation")
 
