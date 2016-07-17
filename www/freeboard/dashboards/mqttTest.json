@@ -1,0 +1,42 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"size": "regular",
+						"value": "datasources[\"hiveMQ\"][\"/test/vish/clients\"]",
+						"animate": true
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "hiveMQ",
+			"type": "paho_mqtt_js",
+			"settings": {
+				"server": "broker.hivemq.com",
+				"port": 8000,
+				"client_id": "client_ftr132654",
+				"topics": "/test/vish/clients;/test/vish/sensorData",
+				"json_data": false,
+				"name": "hiveMQ"
+			}
+		}
+	],
+	"columns": 3
+}
