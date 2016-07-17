@@ -4249,7 +4249,8 @@ freeboard.loadDatasourcePlugin({
 
         this.render = function (element) {
             width = $(element).width();
-            height = $(element).height();
+            // height = $(element).height();
+			height = this.getHeight() * 60;
 
             var radius = Math.min(width, height) / 2 - strokeWidth * 2;
 
