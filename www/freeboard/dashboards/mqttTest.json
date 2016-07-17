@@ -4,21 +4,98 @@
 	"plugins": [],
 	"panes": [
 		{
+			"title": "Sensor0 Info",
 			"width": 1,
 			"row": {
-				"3": 1
+				"3": 1,
+				"4": 1
 			},
 			"col": {
-				"3": 1
+				"3": -8,
+				"4": -7
+			},
+			"col_width": "1",
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"value": "datasources[\"broker-mercury\"][\"/user/vish/test/sensor0\"]",
+						"min_value": 0,
+						"max_value": 100
+					}
+				},
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "History",
+						"value": [
+							"datasources[\"broker-mercury\"][\"/user/vish/test/sensor0\"]"
+						],
+						"include_legend": false
+					}
+				}
+			]
+		},
+		{
+			"title": "Sensor1 Info",
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"3": 2,
+				"4": 3
 			},
 			"col_width": 1,
 			"widgets": [
 				{
-					"type": "text_widget",
+					"type": "gauge",
 					"settings": {
-						"size": "regular",
-						"value": "datasources[\"hiveMQ\"][\"/test/vish/clients\"]",
-						"animate": true
+						"value": "datasources[\"broker-mercury\"][\"/user/vish/test/sensor1\"]",
+						"min_value": 0,
+						"max_value": 100
+					}
+				},
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "HIstory",
+						"value": [
+							"datasources[\"broker-mercury\"][\"/user/vish/test/sensor1\"]"
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "Sensor2 Info",
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"3": 3,
+				"4": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"value": "datasources[\"broker-mercury\"][\"/user/vish/test/sensor2\"]",
+						"min_value": 0,
+						"max_value": 100
+					}
+				},
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "History",
+						"value": [
+							"datasources[\"broker-mercury\"][\"/user/vish/test/sensor2\"]"
+						]
 					}
 				}
 			]
@@ -26,15 +103,14 @@
 	],
 	"datasources": [
 		{
-			"name": "hiveMQ",
+			"name": "broker-mercury",
 			"type": "paho_mqtt_js",
 			"settings": {
-				"server": "broker.hivemq.com",
-				"port": 8000,
-				"client_id": "client_ftr132654",
-				"topics": "/test/vish/clients;/test/vish/sensorData",
-				"json_data": false,
-				"name": "hiveMQ"
+				"server": "192.168.1.54",
+				"port": 9001,
+				"client_id": "freeboard_widget_213216540",
+				"topics": "/user/vish/test/sensor0;/user/vish/test/sensor1;/user/vish/test/sensor2",
+				"json_data": false
 			}
 		}
 	],
