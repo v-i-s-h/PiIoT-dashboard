@@ -31,8 +31,7 @@
                 "name"        : "client_id",
                 "display_name": "Client Id",
                 "type"        : "text",
-                "default_value": "",
-                "required"    : false
+                "required"    : true
             },
             {
                 "name"        : "topics",
@@ -40,13 +39,6 @@
                 "type"        : "text",
                 "description" : "The topics to subscribe to, seperated by semicolon",
                 "required"    : true
-            },
-            {
-                "name"        : "json_data",
-                "display_name": "JSON messages?",
-                "type"        : "boolean",
-                "description" : "If the messages on your topic are in JSON format they will be parsed so the individual fields can be used in freeboard widgets",
-                "default_value": false
             }
         ],
         // **newInstance(settings, newInstanceCallback, updateCallback)** (required) : A function that will be called when a new instance of this plugin is requested.
@@ -91,17 +83,12 @@
         function onMessageArrived(message) {
             console.log( "! t: " + message.destinationName )
             console.log( "  m: " + message.payloadString )
-            if( currentSettings.json_data ) {
+            // Try to parse as JSON message, if failed revert to plain text
+            try {
                 data[message.destinationName] = JSON.parse( message.payloadString )
-            } else {
-                data[message.destinationName] = message.payloadString;
+            } catch(err) {
+                data[message.destinationName] = message.payloadString
             }
-            // data.topic = message.destinationName;
-            // if (currentSettings.json_data) {
-            //     data.msg = JSON.parse(message.payloadString);
-            // } else {
-            //     data.msg = message.payloadString;
-            // }
             updateCallback( data );
         };
 
