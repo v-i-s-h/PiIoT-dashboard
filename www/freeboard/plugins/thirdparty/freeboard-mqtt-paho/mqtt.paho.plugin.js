@@ -81,8 +81,8 @@
         };
 
         function onMessageArrived(message) {
-            console.log( "! t: " + message.destinationName )
-            console.log( "  m: " + message.payloadString )
+            // console.log( "! t: " + message.destinationName )
+            // console.log( "  m: " + message.payloadString )
             // Try to parse as JSON message, if failed revert to plain text
             try {
                 data[message.destinationName] = JSON.parse( message.payloadString )
