@@ -1,0 +1,216 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"width": 1,
+			"row": {
+				"4": 1
+			},
+			"col": {
+				"4": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Name",
+						"size": "regular",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon1\"][\"adv\"][\"localName\"]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Last Seen",
+						"size": "regular",
+						"value": "return new Date(datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon1\"][\"lastSeen\"]).toTimeString()",
+						"animate": true
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "RSSI",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon1\"][\"rssi\"]",
+						"units": "dB",
+						"min_value": "-100",
+						"max_value": "0"
+					}
+				},
+				{
+					"type": "indicator",
+					"settings": {
+						"title": "Online",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon1\"][\"online\"]",
+						"on_text": "ONLINE",
+						"off_text": "OFFLINE"
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"4": 1
+			},
+			"col": {
+				"4": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Name",
+						"size": "regular",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon2\"][\"adv\"][\"localName\"]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Last Seen",
+						"size": "regular",
+						"value": "return new Date(datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon2\"][\"lastSeen\"]).toTimeString()",
+						"animate": true
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "RSSI",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon2\"][\"rssi\"]",
+						"units": "dB",
+						"min_value": "-100",
+						"max_value": "0"
+					}
+				},
+				{
+					"type": "indicator",
+					"settings": {
+						"title": "Online",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon2\"][\"online\"]",
+						"on_text": "ONLINE",
+						"off_text": "OFFLINE"
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"4": 1
+			},
+			"col": {
+				"4": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Name",
+						"size": "regular",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon3\"][\"adv\"][\"localName\"]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Last Seen",
+						"size": "regular",
+						"value": "return new Date(datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon3\"][\"lastSeen\"]).toTimeString()",
+						"animate": true
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "RSSI",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon3\"][\"rssi\"]",
+						"units": "dB",
+						"min_value": "-100",
+						"max_value": "0"
+					}
+				},
+				{
+					"type": "indicator",
+					"settings": {
+						"title": "Online",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon3\"][\"online\"]",
+						"on_text": "ONLINE",
+						"off_text": "OFFLINE"
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"4": 1
+			},
+			"col": {
+				"4": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Name",
+						"size": "regular",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon4\"][\"adv\"][\"localName\"]",
+						"animate": true
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Last Seen",
+						"size": "regular",
+						"value": "return new Date(datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon4\"][\"lastSeen\"]).toTimeString()",
+						"animate": true
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "RSSI",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon4\"][\"rssi\"]",
+						"units": "dB",
+						"min_value": "-100",
+						"max_value": "0"
+					}
+				},
+				{
+					"type": "indicator",
+					"settings": {
+						"title": "Online",
+						"value": "datasources[\"Mercury\"][\"user/vish/devices/ble_tags/beacon4\"][\"online\"]",
+						"on_text": "ONLINE",
+						"off_text": "OFFLINE"
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "Mercury",
+			"type": "paho_mqtt_js",
+			"settings": {
+				"server": "192.168.1.54",
+				"port": 9001,
+				"client_id": "freeboard_34532jhk",
+				"topics": "user/vish/devices/ble_tags/#"
+			}
+		}
+	],
+	"columns": 4
+}
