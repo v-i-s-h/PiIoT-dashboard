@@ -32,14 +32,14 @@
                 "display_name": "User Name",
                 "type"        : "text",
                 "description" : "User Name",
-                "required"    : true
+                "required"    : false
             },
             {
                 "name"        : "password",
                 "display_name": "Password",
                 "type"        : "text",
                 "description" : "Password",
-                "required"    : true
+                "required"    : false
             },
             {
                 "name"        : "client_id",
@@ -144,11 +144,13 @@
         options = {
             timeout: 3,
             onSuccess: onConnect,
-            onFailure: onFailure,
-            userName : currentSettings.userName,
-            password : currentSettings.password
+            onFailure: onFailure
         }
 
+        if(currentSettings.userName != null){
+          options.userName = currentSettings.userName;
+          options.password = currentSettings.password;
+        }
         var client = new Paho.MQTT.Client(currentSettings.server,
                                         currentSettings.port,
                                         currentSettings.client_id);
