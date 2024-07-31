@@ -28,6 +28,20 @@
                 "required"    : true
             },
             {
+                "name"        : "userName",
+                "display_name": "User Name",
+                "type"        : "text",
+                "description" : "User Name",
+                "required"    : false
+            },
+            {
+                "name"        : "password",
+                "display_name": "Password",
+                "type"        : "text",
+                "description" : "Password",
+                "required"    : false
+            },
+            {
                 "name"        : "client_id",
                 "display_name": "Client Id",
                 "type"        : "text",
@@ -40,6 +54,7 @@
                 "description" : "The topics to subscribe to, seperated by semicolon",
                 "required"    : true
             }
+
         ],
         // **newInstance(settings, newInstanceCallback, updateCallback)** (required) : A function that will be called when a new instance of this plugin is requested.
         // * **settings** : A javascript object with the initial settings set by the user. The names of the properties in the object will correspond to the setting names defined above.
@@ -132,9 +147,14 @@
             onFailure: onFailure
         }
 
+        if(currentSettings.userName != null){
+          options.userName = currentSettings.userName;
+          options.password = currentSettings.password;
+        }
         var client = new Paho.MQTT.Client(currentSettings.server,
                                         currentSettings.port,
                                         currentSettings.client_id);
+
         client.onConnectionLost = onConnectionLost;
         client.onMessageArrived = onMessageArrived;
         console.log( "Attempting connection..." );
