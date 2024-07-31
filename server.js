@@ -6,6 +6,11 @@ var http  = require("http"),
     port  = process.argv[2] || 8080;
 
 http.createServer( function( request, response) {
+    if (path.normalize(decodeURI(request.url)) !== decodeURI(request.url)) {
+        response.statusCode = 403;
+        response.end();
+        return;
+    }
 
     var uri = url.parse( request.url ).pathname;
     var filename = path.join( process.cwd()+"/www/freeboard", uri );
